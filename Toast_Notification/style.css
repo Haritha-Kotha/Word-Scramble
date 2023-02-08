@@ -1,0 +1,123 @@
+body{
+    background-color: rgb(56, 59, 61);
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+}
+.btn{
+    margin-top: 25em;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 700;
+    color: white;
+    margin-right: 5px;
+}
+#success{
+    background-color: rgb(10, 233, 10);
+}
+#warning{
+    background-color: gold;
+}
+#info{
+    background-color:#1D9BF0;
+}
+#error{
+    background-color:red;
+}
+.notifications{
+    width:350px;
+    position:fixed;
+    top:10px;
+    right: 10px;
+
+}
+.mark{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:8px;
+    margin-bottom: 10px;
+    background-color:white;
+    position: relative;
+    border-radius: 3px;
+    animation: moment 0.3s ease forwards;
+}
+@keyframes moment{
+    0%{
+        transform: translateX(100%);
+    }
+    40%{
+        transform: translateX(-5%);
+    }
+    80%{
+        transform: translateX((0%));
+    }
+    100%{
+        transform: translateX((-10%));
+    }
+}
+.hide{
+    animation: back 0.3s ease forwards;
+}
+@keyframes back{
+    0%{
+        transform: translateX(-10%);
+    }
+    40%{
+        transform: translateX(0%);
+    }
+    80%{
+        transform: translateX(-5%);
+    }
+    100%{
+        transform: translateX(calc(100% + 10px));
+    }
+}
+
+.mark::before{
+    content: "";
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    animation: progress 5s linear forwards ;
+}
+@keyframes progress {
+    100%{
+        width:0%
+    }
+    
+}
+.success::before{
+    background-color: rgb(10, 233, 10);
+}
+.warning::before{
+    background-color:gold;
+}
+.info::before{
+    background-color:#1D9BF0;
+}
+.error::before{
+    background-color: red;
+}
+.close-img{
+    height: 18px;
+    filter:invert(65%);
+    cursor: pointer;
+}
+.warning-img,.info-img,.success-img,.error-img{
+    height: 30px;
+}
+
+.toast{
+    display: flex;
+    align-items: center;
+}
+.toast img{
+    height: 28px;
+    margin-right: 5px;
+}
